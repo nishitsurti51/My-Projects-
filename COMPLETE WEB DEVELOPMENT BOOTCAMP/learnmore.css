@@ -1,0 +1,31 @@
+button{
+    position: relative;
+    display: inline-block;
+    padding: 15px 25px;
+    font: inherit;
+    letter-spacing: 3px;
+    color: #17C3B2;
+    background-color: black;
+    border: 2px solid #17C3B2;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+}
+button::after{
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(5);
+    width: 100%;
+    color: #17C3B2;
+    opacity: 0;
+    transition: transform .35s;
+}
+button:hover::after{
+    transform: translate(-50%,-50%) scale(1);
+    opacity: 1;
+}
+button:hover{
+    color: transparent;
+}
